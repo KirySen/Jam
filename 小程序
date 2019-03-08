@@ -1,1 +1,34 @@
-
+<view class="retailStore">
+    <input class='m-bbt' type='number' maxlength='50' placeholder='' bindinput="bindKeyInput" value='{{city}}' disabled></input>
+    <view class='search'>
+    <block wx:for="{{iconType}}" wx:key="{{index}}">
+      <icon type="{{item}}" size="15" bindtap="iconSearch"/>
+    </block>
+    </view>
+    <view class='weather'>
+      <text>天气模块</text>
+    </view>
+    <!-- <cover-image src='../../images/city.jpg'></cover-image> -->
+</view>
+<view class='login' bindtap='{{wx.login}}'>
+<view class='userMsg'>
+  <view class="userImage"><open-data type="userAvatarUrl"></open-data></view>
+</view>
+<view class="userName"><open-data type="userNickName"></open-data></view>
+</view>
+<!-- item-swiper模块 -->
+<view class='item'>
+<view class='item-title' hover-class='item-hover'>Item</view>
+  <swiper
+  indicator-dots="{{indicatorDots}}"
+  duration="{{duration}}"
+  next-margin="20rpx"
+  previous-margin="20rpx"
+  >
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+    </swiper>
+</view>
